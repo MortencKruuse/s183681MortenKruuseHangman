@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HangmanGame">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+            android:id="@+id/gamehangmanmaintext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:textSize="40dp"
+            android:text="Please pick a letter" />
+
+        <ImageView
+            android:id="@+id/gamehangmanmainimage"
+            android:layout_width="326dp"
+            android:layout_height="491dp"
+            android:layout_weight="1"
+            android:src="@drawable/galge" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp">
+
+
+            <Button
+                android:id="@+id/abutton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="a" />
+
+            <Button
+                android:id="@+id/b.button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="b" />
+
+            <Button
+                android:id="@+id/cbutton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="c" />
+
+            <Button
+                android:id="@+id/dbutton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="d" />
+
+            <Button
+                android:id="@+id/ebutton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="e" />
+
+            <Button
+                android:id="@+id/fbutton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="f" />
+
+            <Button
+                android:id="@+id/gbutton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="g" />
+
+            <Button
+                android:id="@+id/hbutton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="h" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp">
+            <Button
+                android:id="@+id/ibutton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="i" />
+
+            <Button
+                android:id="@+id/jbutton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="j" />
+
+            <Button
+                android:id="@+id/kbutton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="k" />
+
+            <Button
+                android:id="@+id/lbutton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="l" />
+
+            <Button
+                android:id="@+id/mbutton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="m" />
+            <Button
+                android:id="@+id/nbutton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="n" />
+
+            <Button
+                android:id="@+id/obutton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="o" />
+
+            <Button
+                android:id="@+id/pbutton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="p" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp">
+
+
+            <Button
+                android:id="@+id/qbutton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="q" />
+
+            <Button
+                android:id="@+id/rbutton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="r" />
+
+            <Button
+                android:id="@+id/sbutton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="s" />
+
+            <Button
+                android:id="@+id/tbutton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="t" />
+
+            <Button
+                android:id="@+id/ubutton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="u" />
+
+            <Button
+                android:id="@+id/vbutton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="v" />
+
+            <Button
+                android:id="@+id/wbutton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="w" />
+
+            <Button
+                android:id="@+id/xbutton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="x" />
+
+            <Button
+                android:id="@+id/ybutton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="y" />
+            <Button
+                android:id="@+id/zbutton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="z" />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
