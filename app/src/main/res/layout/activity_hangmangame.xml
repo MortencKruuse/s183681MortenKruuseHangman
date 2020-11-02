@@ -21,12 +21,51 @@
             android:textSize="40dp"
             android:text="Please pick a letter" />
 
-        <ImageView
-            android:id="@+id/gamehangmanmainimage"
-            android:layout_width="326dp"
-            android:layout_height="491dp"
-            android:layout_weight="1"
-            android:src="@drawable/galge" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="428dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp">
+
+            <ImageView
+                android:id="@+id/gamehangmanmainimage"
+                android:layout_width="0dp"
+                android:layout_height="491dp"
+                android:layout_weight="1"
+                android:src="@drawable/galge" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="0dp">
+
+
+                <TextView
+                    android:id="@+id/gamehangmanguessedheader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="150dp"
+                    android:layout_weight="1"
+                    android:textSize="20dp"
+                    android:text="The word so far"
+                    />
+
+                <TextView
+                    android:id="@+id/visibleWord"
+                    android:layout_width="wrap_content"
+                    android:layout_height="64dp"
+                    android:layout_weight="1"
+                    android:text="" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -44,7 +83,7 @@
                 android:text="a" />
 
             <Button
-                android:id="@+id/b.button"
+                android:id="@+id/bbutton"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
@@ -236,7 +275,6 @@
                 android:layout_weight="1"
                 android:text="z" />
         </LinearLayout>
-
 
 
     </LinearLayout>
