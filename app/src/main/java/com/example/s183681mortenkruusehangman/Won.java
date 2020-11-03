@@ -24,7 +24,7 @@ public class Won extends AppCompatActivity implements View.OnClickListener {
         playagainbtn = findViewById(R.id.buttonWonPlayAgain);
         backbtn.setOnClickListener(this);
         playagainbtn.setOnClickListener(this);
-        attempts = findViewById(R.id.tvAttempts);
+        attempts = findViewById(R.id.tvAttemptsWon);
         galgelogik = Galgelogik.getInstance();
         highscoreList = HighscoreList.getInstance();
         try {

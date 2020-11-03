@@ -23,7 +23,7 @@ public class Galgelogik {
     private String name;
 
     private Galgelogik() {
-       /* muligeOrd.add("car");
+        muligeOrd.add("car");
         muligeOrd.add("computer");
         muligeOrd.add("programmering");
         muligeOrd.add("highway");
@@ -32,9 +32,6 @@ public class Galgelogik {
         muligeOrd.add("snail");
         muligeOrd.add("sparrow");
         muligeOrd.add("thieves");
-
-        */
-        muligeOrd.add("abc");
         name = "";
         startNytSpil();
     }
@@ -106,7 +103,7 @@ public class Galgelogik {
             if (brugteBogstaver.contains(bogstav)) {
                 synligtOrd = synligtOrd + bogstav;
             } else {
-                synligtOrd = synligtOrd + "*";
+                synligtOrd = synligtOrd + "_ ";
                 spilletErVundet = false;
             }
         }

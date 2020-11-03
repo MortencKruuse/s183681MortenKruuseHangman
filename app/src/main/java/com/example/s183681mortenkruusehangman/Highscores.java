@@ -2,16 +2,12 @@ package com.example.s183681mortenkruusehangman;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Environment;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -21,7 +17,6 @@ import android.widget.ListView;
 public class Highscores extends AppCompatActivity implements View.OnClickListener {
     private ListView lv;
     HighscoreList highscoreList;
-    File sdCard;
     public static final String TAG = Highscores.class.getSimpleName();
     ArrayList<Highscore> highscoreArrayList;
     Button backbtn;
@@ -38,7 +33,6 @@ public class Highscores extends AppCompatActivity implements View.OnClickListene
         highscoreList = HighscoreList.getInstance();
         highscoreArrayList = highscoreList.getHighscores();
         lv = findViewById(R.id.highscorelistview);
-        sdCard = Environment.getExternalStorageDirectory();
         sharedPreferences = getSharedPreferences("Highscore",MODE_PRIVATE);
 
         lines = new ArrayList<>();
@@ -83,9 +77,6 @@ public class Highscores extends AppCompatActivity implements View.OnClickListene
         for (int i = 0; i < highscoreArrayList.size(); i++) {
             sharedPreferences.edit().putString(String.valueOf(i),highscoreArrayList.get(i).toString()).apply();
         }
-
-
-
         makeViewable();
         highscoreArrayList.clear();
     }

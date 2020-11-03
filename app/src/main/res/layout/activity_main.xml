@@ -11,7 +11,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp">
+        tools:layout_editor_absoluteX="0dp"
+        android:weightSum="4">
 
         <TextView
             android:id="@+id/hangmanHeader"
@@ -21,15 +22,14 @@
             android:layout_marginBottom="0dp"
             android:layout_weight="1"
             android:text="Hangman"
-            android:textSize="40dp"
             android:textStyle="bold" />
+
         <TextView
             android:id="@+id/hangmanFrontPageText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="30dp"
-            android:text="Write your name and press on start to start, name can't be Name here" />
+            android:text="Write your first name and press start to begin the game"
+            android:layout_height="wrap_content" />
         <EditText
             android:id="@+id/etTextPersonName"
             android:layout_width="wrap_content"
@@ -37,29 +37,30 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name here" />
+            android:text="Name" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_weight="1">
 
             <ImageView
                 android:id="@+id/startHangman"
-                android:layout_width="285dp"
-                android:layout_height="370dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 app:srcCompat="@drawable/forkert6" />
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:weightSum="2">
                 <Button
                     android:id="@+id/startButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_gravity="bottom"
-                    android:layout_marginTop="20dp"
                     android:background="@android:color/holo_green_light"
                     android:text="Start" />
 

@@ -9,57 +9,55 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:weightSum="4"
+        app:layout_constraintBottom_toTopOf="@+id/buttonLostPlayAgain"
+        app:layout_constraintTop_toTopOf="parent">
+
         <TextView
             android:id="@+id/lostView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="You lost!"
             android:layout_gravity="center"
-            android:textSize="25dp"
-            android:layout_marginBottom="40dp"
-            android:textStyle="bold"/>
+            android:layout_weight="1"
+            android:text="You lost!"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvAttemptsLost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="The word was programmering and you had 4 wrong guesses"
             android:layout_gravity="center"
-            android:textSize="35dp"
-            android:textStyle="bold"/>
+            android:layout_weight="1"
+            android:text="The word was programmering and you had 4 wrong guesses"
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/ivWonPic"
-            android:layout_width="254dp"
-            android:layout_height="360dp"
-            app:srcCompat="@drawable/forkert6" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            android:orientation="horizontal">
-            <Button
-                android:id="@+id/buttonLostBack"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Back"
-                android:layout_marginLeft="80dp"
-                android:layout_gravity="center"/>
-
-            <Button
-                android:id="@+id/buttonLostPlayAgain"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginLeft="50dp"
-                android:text="Play again" />
-
-        </LinearLayout>
+            android:layout_weight="1"
+            app:srcCompat="@drawable/forkert6" />
 
 
     </LinearLayout>
+    <Button
+        android:id="@+id/buttonLostPlayAgain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="Play again" />
+
+    <Button
+        android:id="@+id/buttonLostBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+
+        android:text="Back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
