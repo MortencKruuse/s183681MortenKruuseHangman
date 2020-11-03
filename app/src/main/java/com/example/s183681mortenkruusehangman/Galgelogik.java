@@ -20,6 +20,7 @@ public class Galgelogik {
     private boolean spilletErVundet;
     private boolean spilletErTabt;
     private static Galgelogik single_instance = null;
+    private String name;
 
     private Galgelogik() {
         muligeOrd.add("car");
@@ -31,6 +32,7 @@ public class Galgelogik {
         muligeOrd.add("snail");
         muligeOrd.add("sparrow");
         muligeOrd.add("thieves");
+        name = "";
         startNytSpil();
     }
     public static Galgelogik getInstance()
@@ -40,8 +42,6 @@ public class Galgelogik {
 
         return single_instance;
     }
-
-
     public ArrayList<String> getBrugteBogstaver() {
         return brugteBogstaver;
     }
@@ -52,6 +52,14 @@ public class Galgelogik {
 
     public String getOrdet() {
         return ordet;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public void setName(String name){
+        this.name = name;
     }
 
     public int getAntalForkerteBogstaver() {

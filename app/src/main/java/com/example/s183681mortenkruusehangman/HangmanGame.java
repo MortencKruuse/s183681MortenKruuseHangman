@@ -22,6 +22,7 @@ public class HangmanGame extends AppCompatActivity implements OnClickListener {
         visibleWord = findViewById(R.id.visibleWord);
         hangmanImage = findViewById(R.id.gamehangmanmainimage);
         initilizeButtons();
+        galgelogik.startNytSpil();
     }
 
     public void initilizeButtons(){
@@ -62,6 +63,8 @@ public class HangmanGame extends AppCompatActivity implements OnClickListener {
     @Override
     public void onClick(View view) {
         if (view instanceof Button){
+            visibleWord.setText(galgelogik.getSynligtOrd());
+            System.out.println(galgelogik.getName());
             ((Button) view).setBackgroundColor(getResources().getColor(R.color.clicked));
             ((Button) view).setClickable(false);
             System.out.println((String) ((Button) view).getText());
