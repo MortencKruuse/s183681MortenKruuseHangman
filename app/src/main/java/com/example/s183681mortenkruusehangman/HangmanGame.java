@@ -2,6 +2,7 @@ package com.example.s183681mortenkruusehangman;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -23,6 +24,7 @@ public class HangmanGame extends AppCompatActivity implements OnClickListener {
         hangmanImage = findViewById(R.id.gamehangmanmainimage);
         initilizeButtons();
         galgelogik.startNytSpil();
+        visibleWord.setText(galgelogik.getSynligtOrd());
     }
 
     public void initilizeButtons(){
@@ -64,13 +66,14 @@ public class HangmanGame extends AppCompatActivity implements OnClickListener {
     public void onClick(View view) {
         if (view instanceof Button){
             visibleWord.setText(galgelogik.getSynligtOrd());
-            System.out.println(galgelogik.getName());
             ((Button) view).setBackgroundColor(getResources().getColor(R.color.clicked));
             ((Button) view).setClickable(false);
-            System.out.println((String) ((Button) view).getText());
             galgelogik.gætBogstav((String) ((Button) view).getText());
             if (galgelogik.erSidsteBogstavKorrekt()){
                 visibleWord.setText(galgelogik.getSynligtOrd());
+                if (galgelogik.erSpilletVundet()){
+                    startActivity(new Intent(HangmanGame.this,Won.class));
+                }
             }
             else{
                 switch(galgelogik.getAntalForkerteBogstaver()) {
@@ -94,7 +97,8 @@ public class HangmanGame extends AppCompatActivity implements OnClickListener {
                     case 6:
                         hangmanImage.setImageResource(R.drawable.forkert6);
                         break;
-
+                    default:
+                        startActivity(new Intent(HangmanGame.this,Lost.class));
                 }
             }
         }

@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Won"></activity>
+        <activity android:name=".Lost"></activity>
+        <activity android:name=".Won" />
         <activity android:name=".Highscores" />
         <activity android:name=".HangmanGame" />
         <activity android:name=".MainActivity">

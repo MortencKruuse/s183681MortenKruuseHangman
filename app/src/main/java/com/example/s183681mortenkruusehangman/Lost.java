@@ -7,10 +7,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-public class Won extends AppCompatActivity implements View.OnClickListener {
+public class Lost extends AppCompatActivity implements View.OnClickListener {
     Button backbtn;
     Button playagainbtn;
     Galgelogik galgelogik;
@@ -19,12 +18,12 @@ public class Won extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_won);
-        backbtn = findViewById(R.id.buttonWonBack);
-        playagainbtn = findViewById(R.id.buttonWonPlayAgain);
+        setContentView(R.layout.activity_lost);
+        backbtn = findViewById(R.id.buttonLostBack);
+        playagainbtn = findViewById(R.id.buttonLostPlayAgain);
         backbtn.setOnClickListener(this);
         playagainbtn.setOnClickListener(this);
-        attempts = findViewById(R.id.tvAttempts);
+        attempts = findViewById(R.id.tvAttemptsLost);
         galgelogik = Galgelogik.getInstance();
         ini();
     }
@@ -32,17 +31,17 @@ public class Won extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if (v instanceof Button) {
-            if (v.getId() == findViewById(R.id.buttonWonBack).getId()) {
-                startActivity(new Intent(Won.this,MainActivity.class));
+            if (v.getId() == findViewById(R.id.buttonLostBack).getId()) {
+                startActivity(new Intent(Lost.this,MainActivity.class));
             }
             else{
-                startActivity(new Intent(Won.this,HangmanGame.class));
+                startActivity(new Intent(Lost.this,HangmanGame.class));
             }
         }
 
     }
     @SuppressLint("SetTextI18n")
     public void ini(){
-        attempts.setText("The word was " + galgelogik.getOrdet() + " and you had " + galgelogik.getAntalForkerteBogstaver() + " wrong guesses.");
+        attempts.setText("The word was " + galgelogik.getOrdet());
     }
 }
