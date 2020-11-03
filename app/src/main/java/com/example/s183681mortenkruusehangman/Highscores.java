@@ -7,12 +7,9 @@ import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -33,6 +30,8 @@ public class Highscores extends AppCompatActivity implements View.OnClickListene
     private String filepath = "MyFileStorage";
     File myExternalFile;
     String data;
+    File sdCard;
+    File file;
     public static final String TAG = Highscores.class.getSimpleName();
     ArrayList<Highscore> highscoreArrayList;
     Button backbtn;
@@ -47,8 +46,18 @@ public class Highscores extends AppCompatActivity implements View.OnClickListene
         highscoreList = HighscoreList.getInstance();
         highscoreArrayList = highscoreList.getHighscores();
         lv = findViewById(R.id.highscorelist);
+        sdCard = Environment.getExternalStorageDirectory();
+        File directory = new File (sdCard.getAbsolutePath() + "/MyFiles");
+        directory.mkdirs();
+        file = new File(directory,"mysdfile.txt");
         lines = new ArrayList<>();
         checkStorage();
+        readFromFile();
+        for (String s:lines
+             ) {Log.d(TAG,s);
+
+        }
+
         try {
             writeToFile();
 
@@ -98,7 +107,7 @@ public class Highscores extends AppCompatActivity implements View.OnClickListene
     public void writeToFile() throws IOException {
 
         try {
-            FileOutputStream fos = new FileOutputStream(myExternalFile);
+            FileOutputStream fos = new FileOutputStream(file);
             for (Highscore highscores : highscoreArrayList) {
                 data = highscores.toString();
                 fos.write(data.getBytes());
@@ -114,10 +123,9 @@ public class Highscores extends AppCompatActivity implements View.OnClickListene
 
     public void readFromFile() {
         try {
-            FileInputStream fis = new FileInputStream(myExternalFile);
+            FileInputStream fis = new FileInputStream(file);
             DataInputStream in = new DataInputStream(fis);
-            BufferedReader br =
-                    new BufferedReader(new InputStreamReader(in));
+            BufferedReader br = new BufferedReader(new InputStreamReader(in));
             String strLine;
             while ((strLine = br.readLine()) != null) {
                 lines.add(strLine);
@@ -132,7 +140,7 @@ public class Highscores extends AppCompatActivity implements View.OnClickListene
     public void checkStorage() {
         if (!isExternalStorageAvailable() || isExternalStorageReadOnly()) {
         } else {
-            myExternalFile = new File(getExternalFilesDir(filepath), filename);
+            myExternalFile = new File(getFilesDir(), filename);
         }
 
 
@@ -155,7 +163,7 @@ public class Highscores extends AppCompatActivity implements View.OnClickListene
     }
 
     public void resetFile() throws IOException {
-        if(myExternalFile.delete()){
+        if(file.delete()){
             Log.d(TAG,"Slettet");
         }
     }

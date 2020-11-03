@@ -10,7 +10,7 @@ public class HighscoreList {
     {
         if (single_instance == null){
             single_instance = new HighscoreList();
-            single_instance.addHighscore(new Highscore("Hejsa",5));
+            single_instance.addHighscore(new Highscore("Tester",5));
         }
 
         return single_instance;
