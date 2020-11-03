@@ -17,7 +17,6 @@ import android.widget.ListView;
 public class Highscores extends AppCompatActivity implements View.OnClickListener {
     private ListView lv;
     HighscoreList highscoreList;
-    public static final String TAG = Highscores.class.getSimpleName();
     ArrayList<Highscore> highscoreArrayList;
     Button backbtn;
     List<String> lines;

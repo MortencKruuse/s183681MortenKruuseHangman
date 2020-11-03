@@ -22,12 +22,12 @@ public class HangmanGame extends AppCompatActivity implements OnClickListener {
         setContentView(R.layout.activity_hangmangame);
         visibleWord = findViewById(R.id.visibleWord);
         hangmanImage = findViewById(R.id.gamehangmanmainimage);
-        initilizeButtons();
+        initializeButtons();
         galgelogik.startNytSpil();
         visibleWord.setText(galgelogik.getSynligtOrd());
     }
 
-    public void initilizeButtons(){
+    public void initializeButtons(){
         Button[] buttons = new Button[26];
         buttons[0] = findViewById(R.id.abutton);
         buttons[1] = findViewById(R.id.bbutton);

@@ -35,7 +35,7 @@ public class Highscore implements Comparable<Highscore> {
     }
 
     @Override
-    public int compareTo(Highscore o) {
+    public int compareTo(Highscore o)    {
         int comparescore = ((Highscore)o).getWrong();
         return this.getWrong()-comparescore;
     }
