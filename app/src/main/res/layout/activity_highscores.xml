@@ -26,7 +26,7 @@
         android:layout_weight="0.1">
         
         <ListView
-            android:id="@+id/highscorelist"
+            android:id="@+id/highscorelistview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -38,7 +38,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/backButton"
+                android:id="@+id/backButtonhighscores"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:text="Back"/>
