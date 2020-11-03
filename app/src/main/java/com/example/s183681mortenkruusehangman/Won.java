@@ -15,25 +15,24 @@ public class Won extends AppCompatActivity implements View.OnClickListener {
     Button playagainbtn;
     Galgelogik galgelogik;
     TextView attempts;
-    Highscores highscores;
+    HighscoreList highscoreList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_won);
-        highscores = new Highscores();
         backbtn = findViewById(R.id.buttonWonBack);
         playagainbtn = findViewById(R.id.buttonWonPlayAgain);
         backbtn.setOnClickListener(this);
         playagainbtn.setOnClickListener(this);
         attempts = findViewById(R.id.tvAttempts);
         galgelogik = Galgelogik.getInstance();
+        highscoreList = HighscoreList.getInstance();
         try {
-            highscores.addHighscore(new Highscore(galgelogik.getName(),galgelogik.getAntalForkerteBogstaver()));
+            highscoreList.addHighscore(new Highscore(galgelogik.getName(),galgelogik.getAntalForkerteBogstaver()));
         }catch (NullPointerException e){
-            highscores.addHighscore(new Highscore(galgelogik.getName(),0));
+            highscoreList.addHighscore(new Highscore(galgelogik.getName(),0));
         }
-
         ini();
     }
 

@@ -5,10 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HangmanGame">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp">
 
@@ -16,10 +18,10 @@
             android:id="@+id/gamehangmanmaintext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_gravity="center"
-            android:textSize="40dp"
-            android:text="Please pick a letter" />
+            android:layout_weight="1"
+            android:text="Please pick a letter"
+            android:textSize="40dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -34,7 +36,8 @@
                 android:layout_height="491dp"
                 android:layout_weight="1"
                 android:src="@drawable/galge" />
-L
+            L
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -50,9 +53,8 @@ L
                     android:layout_gravity="center"
                     android:layout_marginTop="150dp"
                     android:layout_weight="1"
-                    android:textSize="20dp"
                     android:text="The word so far"
-                    />
+                    android:textSize="20dp" />
 
                 <TextView
                     android:id="@+id/visibleWord"
@@ -70,8 +72,8 @@ L
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_gravity="center"
+            android:orientation="horizontal"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="0dp">
 
@@ -137,10 +139,11 @@ L
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_gravity="center"
+            android:orientation="horizontal"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="0dp">
+
             <Button
                 android:id="@+id/ibutton"
                 android:layout_width="40dp"
@@ -175,6 +178,7 @@ L
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:text="m" />
+
             <Button
                 android:id="@+id/nbutton"
                 android:layout_width="40dp"
@@ -200,8 +204,8 @@ L
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_gravity="center"
+            android:orientation="horizontal"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="0dp">
 
@@ -268,6 +272,7 @@ L
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:text="y" />
+
             <Button
                 android:id="@+id/zbutton"
                 android:layout_width="40dp"
