@@ -3,6 +3,7 @@ package com.example.s183681mortenkruusehangman;
 import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,7 +14,7 @@ public class Lost extends AppCompatActivity implements View.OnClickListener {
     Button playagainbtn;
     Galgelogik galgelogik;
     TextView attempts;
-
+    MediaPlayer mp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +25,8 @@ public class Lost extends AppCompatActivity implements View.OnClickListener {
         playagainbtn.setOnClickListener(this);
         attempts = findViewById(R.id.tvAttemptsLost);
         galgelogik = Galgelogik.getInstance();
+        mp = MediaPlayer.create(this,R.raw.lossound);
+        mp.start();
         ini();
     }
 

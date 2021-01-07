@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -13,6 +15,8 @@ public class HangmanGame extends AppCompatActivity implements OnClickListener {
     Galgelogik galgelogik = Galgelogik.getInstance();
     TextView visibleWord;
     ImageView hangmanImage;
+    Animation animationin;
+    Animation animationout;
 
 
     @Override
@@ -77,23 +81,31 @@ public class HangmanGame extends AppCompatActivity implements OnClickListener {
             else{
                 switch(galgelogik.getAntalForkerteBogstaver()) {
                     case 1:
+                        animationin =  AnimationUtils.loadAnimation(this,R.anim.lefttoright);
+                        hangmanImage.startAnimation(animationin);
+
                         hangmanImage.setImageResource(R.drawable.forkert1);
                         break;
                     case 2:
+                        hangmanImage.startAnimation(animationin);
                         hangmanImage.setImageResource(R.drawable.forkert2);
                         break;
                     case 3:
+                        hangmanImage.startAnimation(animationin);
                         hangmanImage.setImageResource(R.drawable.forkert3);
                         break;
                     case 4:
+                        hangmanImage.startAnimation(animationin);
                         hangmanImage.setImageResource(R.drawable.forkert4);
                         break;
 
                     case 5:
+                        hangmanImage.startAnimation(animationin);
                         hangmanImage.setImageResource(R.drawable.forkert5);
                         break;
 
                     case 6:
+                        hangmanImage.startAnimation(animationin);
                         hangmanImage.setImageResource(R.drawable.forkert6);
                         break;
                     default:
