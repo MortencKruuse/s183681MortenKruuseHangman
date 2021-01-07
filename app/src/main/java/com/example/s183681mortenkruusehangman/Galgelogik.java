@@ -13,6 +13,7 @@ public class Galgelogik {
     /** AHT afprøvning er muligeOrd synlig på pakkeniveau */
     ArrayList<String> muligeOrd = new ArrayList<String>();
     private String ordet;
+    private String valgtOrd = "Intet";
     private ArrayList<String> brugteBogstaver = new ArrayList<String>();
     private String synligtOrd;
     private int antalForkerteBogstaver;
@@ -23,17 +24,7 @@ public class Galgelogik {
     private String name;
 
     private Galgelogik() {
-        muligeOrd.add("car");
-        muligeOrd.add("computer");
-        muligeOrd.add("programmering");
-        muligeOrd.add("highway");
-        muligeOrd.add("busroute");
-        muligeOrd.add("pavement");
-        muligeOrd.add("snail");
-        muligeOrd.add("sparrow");
-        muligeOrd.add("thieves");
         name = "";
-        startNytSpil();
     }
     public static Galgelogik getInstance()
     {
@@ -82,6 +73,18 @@ public class Galgelogik {
         return spilletErTabt || spilletErVundet;
     }
 
+    public ArrayList<String> getMuligeOrd() {
+        return muligeOrd;
+    }
+
+    public String getValgtOrd() {
+        return valgtOrd;
+    }
+
+    public void setValgtOrd(String valgtOrd) {
+        this.valgtOrd = valgtOrd;
+    }
+
 
     public void startNytSpil() {
         brugteBogstaver.clear();
@@ -89,9 +92,17 @@ public class Galgelogik {
         spilletErVundet = false;
         spilletErTabt = false;
         if (muligeOrd.isEmpty()) throw new IllegalStateException("Listen over mulige ord er tom!");
-        ordet = muligeOrd.get(new Random().nextInt(muligeOrd.size()));
-        System.out.println("Nyt spil - det skjulte ord er: "+ordet);
-        opdaterSynligtOrd();
+        if(valgtOrd.equals("Intet")){
+            ordet = muligeOrd.get(new Random().nextInt(muligeOrd.size()));
+            System.out.println("Nyt spil - det skjulte ord er: "+ordet);
+            opdaterSynligtOrd();
+        }
+        else{
+            ordet = valgtOrd;
+            System.out.println("Nyt spil - det skjulte ord er: "+ordet);
+            opdaterSynligtOrd();
+        }
+
     }
 
 
